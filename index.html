@@ -1,0 +1,15 @@
+<link type="text/css" rel="stylesheet" href="jesture.css" />
+<video class="cameraCanvas" autoplay="autoplay" id="vid"></video>
+<canvas id="canvas" class="cameraCanvas" width="640" height="480"></canvas><br>
+
+<script type="text/javascript" src="jesture.js"></script>
+<script type="text/javascript">
+    var jesture = new Jesture("vid","canvas",
+            {
+                onLeft:function(){console.log("left")},
+                onRight:function(){console.log("right")},
+                onUp:function(){console.log("up")},
+                onDown:function(){console.log("down")}
+            });
+</script>
+

@@ -1,0 +1,16 @@
+.cameraCanvas {
+    width: 640px;
+    height: 480px;
+}
+
+#canvas {
+    border: 1px solid #d3d3d3;
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+}
+
+#vid {
+    display: none
+}
