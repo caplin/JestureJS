@@ -232,3 +232,5 @@ Jesture.prototype.calculateIntensity = function (imageData, i, total, color) {
     imageData[i + 1] = color.g;
     imageData[i + 2] = color.b;
 }
+
+
