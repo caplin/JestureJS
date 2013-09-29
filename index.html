@@ -1,15 +1,90 @@
-<link type="text/css" rel="stylesheet" href="jesture.css" />
-<video class="cameraCanvas" autoplay="autoplay" id="vid"></video>
-<canvas id="canvas" class="cameraCanvas" width="640" height="480"></canvas><br>
+<html>
+<head>
+    <title>JestureJS Sample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script type="text/javascript" src="jesture.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="jesture.css"/>
+    <script type="text/javascript" src="jesture.js"></script>
+    <script src="//code.jquery.com/jquery.js"></script>
+</head>
 <script type="text/javascript">
-    var jesture = new Jesture("vid","canvas",
-            {
-                onLeft:function(){console.log("left")},
-                onRight:function(){console.log("right")},
-                onUp:function(){console.log("up")},
-                onDown:function(){console.log("down")}
-            });
+    $(document).ready(function () {
+
+        var jesture = new Jesture("vid", "canvas",
+                {
+                    onLeft: function () {
+                        console.log("left")
+                    },
+                    onRight: function () {
+                        console.log("right")
+                    },
+                    onUp: function () {
+                        console.log("up")
+                    },
+                    onDown: function () {
+                        console.log("down")
+                    }
+                });
+
+        $("#inputThreshold").change(function () {
+            jesture.THRESHOLD = $("#inputThreshold").val();
+        });
+
+        $("#inputShowMask").change(function () {
+            jesture.SHOW_MASK = $("#inputShowMask").is(":checked");
+        });
+    });
 </script>
+
+
+<body>
+
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://github.com/caplin/JestureJS">JestureJS</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <h1>JestureJS Sample App</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <video class="cameraCanvas" autoplay="autoplay" id="vid"></video>
+            <canvas id="canvas" class="cameraCanvas" width="640" height="480"></canvas>
+        </div>
+        <div class="col-md-4">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="inputThreshold" class="col-lg-4 control-label">Threshold</label>
+
+                    <div class="col-lg-6">
+                        <input type="number" class="form-control" id="inputThreshold" placeholder="Threshold"
+                               value="100">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputShowMask" class="col-lg-4 control-label">Show Mask</label>
+
+                    <div class="col-lg-6">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="inputShowMask" checked="checked"/>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
 
