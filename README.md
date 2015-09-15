@@ -3,4 +3,4 @@ JestureJS
 
 A library to detect gestures using a webcam.
 
-[View the live demo](https://github.com/caplin/JestureJS.git)
+[Click here to view a live demo](http://caplin.github.io/JestureJS/)
